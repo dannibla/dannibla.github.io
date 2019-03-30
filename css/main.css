@@ -161,8 +161,8 @@ body {
         width: 25%;
     }
 }
-.footer > .footer-info,
-.footer > .footer-social {
+
+.footer > .footer-info {
     position: relative;
     width: 100%;
     min-height: 100%;
@@ -171,14 +171,3 @@ body {
     margin-top: 24px;
     margin-bottom: 14px;
 }
-
-    .footer > .footer-social a {
-        padding: 5px;
-        margin: 0;
-        text-decoration: none;
-        outline: none;
-    }
-
-    .footer > .footer-social img {
-        height: 32px;
-    }
