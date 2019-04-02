@@ -153,13 +153,26 @@ body {
             vertical-align: middle;
             display: block;
             max-width: 100%;
+            min-height: 158px;
             height: auto;
+            opacity: 0;
+            transition: opacity 0.2s ease;
         }
+
+.gallery.loaded > .gallery-item > .item-link a > img,
+.gallery.loaded > .gallery-item > .item-link > img {
+    opacity: 1;
+}
 
 @media (min-width: 992px) {
     .gallery > .gallery-item {
         width: 25%;
     }
+
+        .gallery > .gallery-item > .item-link a > img,
+        .gallery > .gallery-item > .item-link > img {
+            min-height: 250px;
+        }
 }
 
 .footer > .footer-info {
