@@ -10,43 +10,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet" type="text/css" />
     <link href="./css/main.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
-<body ng-app="MyApp">
+<body>
     <div class="content">
         <div class="header">
-            <div class="header-intro">
+            <div class="header-intro" data-aos="zoom-in-right" data-aos-duration="300">
                 <h1>Daniel J Abraham</h1>
                 <h3>@dannibla</h3>
-                <p>I'm a Web/UI Developer, Currently building application's for a Tech Company in Chennai, Specialist in developing base component's and base configuration of a product, Playing a major role in UI/UX of the product. You can find my work on <a href="https://codepen.io/dannibla" title="codepen.io/dannibla" target="_blank">Codepen</a> and <a href="https://github.com/dannibla" title="github.com/dannibla" target="_blank">Github</a>.</p>
+                <p>I'm a Software Developer, Currently building application's for a Tech Company in Chennai, Specialist in developing base component's and base configuration of a product, Playing a major role in UI/UX of the product. You can find my work on <a href="https://codepen.io/dannibla" title="codepen.io/dannibla" target="_blank">Codepen</a> and <a href="https://github.com/dannibla" title="github.com/dannibla" target="_blank">Github</a>.</p>
             </div>
-            <div class="header-social">
+            <div class="header-social" data-aos="zoom-in-left" data-aos-duration="300">
                 <a href="https://codepen.io/dannibla" title="codepen.io/dannibla" target="_blank"><img src="./img/codepen.png" /></a>
                 <a href="https://github.com/dannibla" title="github.com/dannibla" target="_blank"><img src="./img/github.png" /></a>
                 <a href="https://linkedin.com/in/dannibla" title="linkedin.com/in/dannibla" target="_blank"><img src="./img/linkedin.png" /></a>
             </div>
         </div>
-        <div ng-controller="gallery" id="gallery" class="gallery">
-            <div class="gallery-item" ng-repeat="item in items | offset: currentPage*itemsPerPage | limitTo: itemsPerPage">
-                <a ng-href="{{item.link}}" class="item-link"><img ng-src="{{item.image}}"></a>
-                <h4>{{item.title}}</h4>
-                <p>{{item.description}}</p>
+        <div id="gallery" class="gallery">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-duration="300">
+                <a href="" class="item-link"><img src="https://via.placeholder.com/350"></a>
+                <h4>Sample Tilte</h4>
+                <p>Sample Discription</p>
             </div>
-            <div class="pagination">
-                <ul>
-                    <li ng-class="prevPageDisabled()" ng-click="prevPage()">« Prev</li>
-                    <li ng-repeat="n in range()" ng-class="{active: n == currentPage}" ng-click="setPage(n)">{{n+1}}</li>
-                    <li ng-class="nextPageDisabled()" ng-click="nextPage()">Next »</li>
-                </ul>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-duration="500">
+                <a href="" class="item-link"><img src="https://via.placeholder.com/350"></a>
+                <h4>Sample Tilte</h4>
+                <p>Sample Discription</p>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-duration="700">
+                <a href="" class="item-link"><img src="https://via.placeholder.com/350"></a>
+                <h4>Sample Tilte</h4>
+                <p>Sample Discription</p>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-duration="900">
+                <a href="" class="item-link"><img src="https://via.placeholder.com/350"></a>
+                <h4>Sample Tilte</h4>
+                <p>Sample Discription</p>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-duration="300">
+                <a href="" class="item-link"><img class="lazy" data-src="https://via.placeholder.com/350"></a>
+                <h4>Sample Tilte</h4>
+                <p>Sample Discription</p>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-duration="500">
+                <a href="" class="item-link"><img class="lazy" data-src="https://via.placeholder.com/350"></a>
+                <h4>Sample Tilte</h4>
+                <p>Sample Discription</p>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-duration="700">
+                <a href="" class="item-link"><img class="lazy" data-src="https://via.placeholder.com/350"></a>
+                <h4>Sample Tilte</h4>
+                <p>Sample Discription</p>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-duration="900">
+                <a href="" class="item-link"><img class="lazy" data-src="https://via.placeholder.com/350"></a>
+                <h4>Sample Tilte</h4>
+                <p>Sample Discription</p>
             </div>
         </div>
         <div class="footer">
-            <div class="footer-info">
+            <div class="footer-info" data-aos="zoom-in-right" data-aos-duration="300">
                 <h3>If you would like to work with me</h3>
                 <p>Drop me an <a href="mailto:dannibla@outlook.com" title="mailto:dannibla@outlook.com">email</a>, Let's have a Coffee and Chat.</p>
             </div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" type="text/javascript"></script>
     <script src="./js/main.js" type="text/javascript"></script>
 </body>
 </html>
