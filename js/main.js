@@ -1,5 +1,4 @@
 /*
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 */
 
@@ -12,7 +11,6 @@
     var setTime = 2250;
 
     window.onload = function () {
-        document.getElementById('gallery').className = 'gallery loaded';
         body.focus();
         if (window.innerWidth > 768) {
             setTime = 5000;
@@ -80,7 +78,5 @@
         window.addEventListener("resize", lazyload);
         window.addEventListener("orientationChange", lazyload);
     });
-
-    AOS.init();
 
 })();
