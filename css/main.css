@@ -18,7 +18,7 @@ body {
 
 html {
     font-size: 10px;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -27,7 +27,7 @@ html {
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-size: 13px;
     line-height: 22px;
@@ -65,7 +65,6 @@ body {
 
 .header,
 .gallery,
-.instagram_gallery,
 .footer {
     display: -ms-flexbox;
     display: flex;
@@ -112,8 +111,7 @@ body {
     }
 }
 
-.gallery>.gallery-item,
-.instagram_gallery>.instagram-image {
+.gallery>.gallery-item {
     position: relative;
     min-height: 100%;
     padding-right: 7px;
@@ -149,6 +147,10 @@ body {
     -webkit-box-orient: vertical;
 }
 
+.gallery>.gallery-item a.hidden {
+	display:none;
+}
+
 .gallery>.gallery-item>.item-link {
     position: relative;
     display: inline-block;
@@ -171,16 +173,6 @@ body {
     height: auto;
     opacity: 0;
     transition: opacity 0.3s ease;
-}
-
-#instagram>.instagram_gallery>.instagram-image>img {
-	margin-right: auto;
-    margin-left: auto;
-    vertical-align: middle;
-    display: block;
-    max-width: 100%;
-    min-height: 158px;
-    height: auto;
 }
 
 .gallery>.gallery-item>.item-link .glow-wrap {
@@ -306,7 +298,7 @@ body.animate .animation {
 
 .tabs .content section h2,
 .tabs ul li label {
-    font-family: "Montserrat";
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 18px;
     color: #232323;
@@ -501,8 +493,7 @@ body.animate .animation {
 }
 
 @media (max-width: 1000px) {
-    .gallery>.gallery-item,
-	#instagram>.instagram_gallery>.instagram-image	{
+    .gallery>.gallery-item {
         width: 33.3%;
     }
     .tabs ul li label {
@@ -517,8 +508,7 @@ body.animate .animation {
 }
 
 @media (max-width: 600px) {
-    .gallery>.gallery-item,
-	#instagram>.instagram_gallery>.instagram-image	{
+    .gallery>.gallery-item {
         width: 50%;
     }
     .tabs ul li label {
@@ -550,8 +540,113 @@ body.animate .animation {
 }
 
 @media (max-width: 330px) {
-    .gallery>.gallery-item,
-	#instagram>.instagram_gallery>.instagram-image	{
+    .gallery>.gallery-item {
         width: 100%;
     }
+}
+
+/**
+* Fancybox
+*/
+
+a[data-fancybox] img {
+  cursor: zoom-in;
+}
+
+.fancybox__container {
+  --fancybox-color: #334155;
+  --fancybox-bg: #fff;
+
+  --fancybox-content-color: #6B7280;
+  --fancybox-content-bg: #fff;
+
+  --fancybox-thumbs-width: 48px;
+  --fancybox-thumbs-ratio: 1;
+
+  --carousel-button-svg-stroke-width: 1.5;
+  --carousel-button-svg-filter: none;
+}
+
+/**
+*  Navigation buttons
+*/
+
+.fancybox__nav {
+  --carousel-button-bg: #E5E7EB;
+
+  --carousel-button-svg-width: 20px;
+  --carousel-button-svg-height: 20px;
+
+  --carousel-button-svg-stroke-width: 3;
+}
+
+.fancybox__nav .carousel__button.is-next {
+  right: 30px;
+}
+
+.fancybox__nav .carousel__button.is-prev {
+  left: 30px;
+}
+
+.carousel__button.is-close {
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+/**
+*  Toolbar
+*/
+
+.fancybox__toolbar {
+  padding: 0;
+
+  background: var(--fancybox-bg);
+  text-shadow: none;
+
+  --carousel-button-svg-width: 24px;
+  --carousel-button-svg-height: 24px;
+}
+
+.fancybox__toolbar {
+  display: flex;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+/**
+* Thumbnails
+*/
+
+.carousel__slide.has-thumb {
+  padding: 5px;
+  margin: 16px 8px;
+  border: 1px solid #D1D5DB;
+  border-radius: 4px;
+}
+
+.is-nav-selected .fancybox__thumb::after {
+  display: none;
+}
+
+.carousel__slide.has-thumb:hover,
+.carousel__slide.has-thumb.is-nav-selected {
+  border-color: #6B7280;
+}
+
+.carousel__slide.has-thumb.has-video {
+  --fancybox-thumbs-ratio: 16 / 9;
+}
+
+.carousel__slide.has-thumb.has-video .fancybox__thumb::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  bottom: 0;
+  background-position: center center;
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24.38"><path d="M35.46 3.81A4.58 4.36 0 0032.24.75C29.37 0 17.93 0 17.93 0S6.48 0 3.63.72c-1.54.4-2.8 1.6-3.23 3.1-.75 2.72-.75 8.37-.75 8.37s0 5.68.75 8.37a4.58 4.36 0 003.22 3.07c2.9.75 14.3.75 14.3.75s11.45 0 14.32-.72a4.58 4.36 0 003.22-3.07c.75-2.72.75-8.37.75-8.37s.03-5.68-.75-8.4zm0 0" fill="white"/><path d="M14.29 17.4l9.51-5.21-9.51-5.22zm0 0" fill="black"/></svg>');
 }
